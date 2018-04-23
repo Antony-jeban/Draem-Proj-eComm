@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DreamModule} from './dream.module';
+
+
 
 
 import { AppComponent } from './app.component';
-import { DreamModule} from './dream.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
+   
   ],
   imports: [
     BrowserModule,

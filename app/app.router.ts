@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-
+import { AppComponent} from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -9,32 +10,18 @@ import { ProductlistComponent } from './components/productlist/productlist.compo
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { LoginSignupComponent } from './components/login-signup/login-signup.component';
 
-import { AppRoutingModule } from './app.router';
 
-
+const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomepageComponent },
+    { path: 'product/:id', component: ProductsComponent },
+    { path: 'products', component: ProductlistComponent },
+    { path: 'contact-us', component: ContactUsComponent },
+    { path: 'login', component: LoginSignupComponent }
+];
 
 @NgModule({
-    declarations: [
-        HeaderComponent,
-        FooterComponent,
-        HomepageComponent,
-        ProductsComponent,
-        ProductlistComponent,
-        ContactUsComponent,
-        LoginSignupComponent
-    ],
-    imports: [
-        AppRoutingModule
-    ],
-    providers: [],
-    exports: [
-        HeaderComponent,
-        FooterComponent,
-        HomepageComponent,
-        ProductsComponent,
-        ProductlistComponent,
-        ContactUsComponent,
-        LoginSignupComponent
-    ]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class DreamModule { }
+export class AppRoutingModule { }
