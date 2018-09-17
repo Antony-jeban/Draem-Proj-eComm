@@ -1,0 +1,53 @@
+Message is {{title}}
+<div>
+    <form #form="ngForm" (ngSubmit)="submitIt(form)" novalidate>
+        ID:  <input #uid="ngModel" name="uid" ngModel required  type="text" placeholder="Type id Here">
+        <span *ngIf="uid.pristine && uid.touched">Userid Can't Be Empty</span>
+        <!-- <span *ngIf="uid.dirty && uid.invalid">Userid is in B/w 3 to 10 Alpha Chars</span> -->
+        <br>
+        <br>
+        Name:  <input #uname="ngModel" name="uname" ngModel required  type="text" placeholder="Type Name Here">
+        <span *ngIf="uname.pristine && uname.touched">name Can't Be Empty</span>
+        <!-- <span *ngIf="uid.dirty && uid.invalid">Userid is in B/w 3 to 10 Alpha Chars</span> -->
+        <br>
+        <br>
+        
+        Price:  <input #price="ngModel" name="price" ngModel required  type="range" min="1" max="10000" step="10">{{price.value}}
+        <!-- <span *ngIf="uid.dirty && uid.invalid">Userid is in B/w 3 to 10 Alpha Chars</span> -->
+        <br>
+        <br>
+        
+        <label>Description:</label>   <textarea #desc="ngModel" name="desc" maxlength="99" ngModel required (keyup)="count()" type="textarea" placeholder="Type Desc Here"></textarea> {{counter}}
+        <span *ngIf="desc.pristine && desc.touched">Desc Can't Be Empty</span>
+        <!-- <span *ngIf="uid.dirty && uid.invalid">Userid is in B/w 3 to 10 Alpha Chars</span> -->
+        <br>
+        <br>
+        
+        Url:   <input #url="ngModel" name="url" ngModel required  type="text" placeholder="Type Url Here">
+        <span *ngIf="url.pristine && url.touched">Url Can't Be Empty</span>
+        <!-- <span *ngIf="uid.dirty && uid.invalid">Userid is in B/w 3 to 10 Alpha Chars</span> -->
+        <br>
+        <br>
+        
+        <button (click)="callservice(uid.value,uname.value,price.value,desc.value,url.value)">Add</button>
+        
+        
+        
+        <button type="submit">Register</button>
+        <!-- <button (click)="clearAll()">Clear</button> -->
+    </form>
+
+</div>
+
+<!-- <ul>
+    <li><a routerLink=""> Home</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li><a routerLink="/news">News</a></li>
+    <li><a routerLink="/shop">Shop</a></li>
+
+</ul>
+
+<fieldset>
+    <legend>Output</legend>
+    <router-outlet></router-outlet>
+</fieldset> -->

@@ -1,0 +1,43 @@
+/* write ur css here */
+.title{
+    color:royalblue;
+    padding: 14px 16px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    text-align: center;
+}
+
+.login{
+    float:right;
+}
+li a {
+    display: block;
+    color: white;
+    
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color:royalblue;
+}
+
+input[type=text]{
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 14px 16px;
+}
+/* .active {
+    background-color: crimson;
+} */
