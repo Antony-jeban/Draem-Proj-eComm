@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { DreamModule} from './dream.module';
-
+import { BreezeBridgeAngular2Module } from 'breeze-bridge-angular2';
 
 
 
@@ -15,7 +15,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    DreamModule
+    DreamModule,
+    BreezeBridgeAngular2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
