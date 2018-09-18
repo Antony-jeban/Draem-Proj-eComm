@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {myservice} from '../../services/myservice.service'
+import { Myservice } from '../../services/myservice.service';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   // styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-  counter:number;
-  constructor(private myservice:myservice) {
+  counter: number;
+  // tslint:disable-next-line:no-shadowed-variable
+  constructor(private myservice: Myservice) {
     this.counter = 99;
-   }
+  }
 
   ngOnInit() {
   }
-  count(){
-    this.counter--
+  count() {
+    this.counter--;
   }
-callservice(id,name,price,desc,url)
-{
+  callservice(id, name, price, desc, url) {
 
-this.myservice.called(id,name,price,desc,url);
-}
+    this.myservice.called(id, name, price, desc, url);
+  }
 }
